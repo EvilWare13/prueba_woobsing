@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <div class="card ">
+    <div class="card-body">
+      <span class="h3 ">Listado de registros</span>
+
+      <!-- Start table  -->
+      <table class="table table-hover mt-4">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let usuario of usuarios ; index as i" >
+            <th scope="row">{{i+1}}</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellido}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- End table  -->
+      <span 
+        *ngIf='usuarios== null || usuarios==undefined' 
+        class="badge bg-success"
+      >
+        No hay usuarios registrados
+      </span>
+    </div>
+  </div>
+</div>
